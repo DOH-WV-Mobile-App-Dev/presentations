@@ -1,2 +1,2 @@
-# presentations
-Presentations Repository
+# Presentations
+Presentations Repository for the Mobile App Dev Training
