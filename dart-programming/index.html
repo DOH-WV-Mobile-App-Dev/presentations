@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Learning Dart</title>
+
+	<meta name="description" content="Presentation made with reveal.js">
+	<meta name="author" content="Mark Joseph J. Solidarios">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section class="left" data-background="assets/bg0.jpg">
+				<img src="assets/dart.svg" style="height: 200px; width: auto;" alt="" srcset="">
+				<h2>Dart</h2>
+				<p>a prerequisite to learn Flutter</p>
+				<img src="assets/profile.jpg" class="profile" /><small class="profile-text">
+					<div class="icon-bar">
+						<a href="mailto:mjsolidarios@wvsu.edu.ph" class="email"><i class="fa fa-envelope"></i></a>
+						<a href="https://www.facebook.com/sexynojutsuuser" class="facebook"><i
+								class="fa fa-facebook"></i></a>
+						<a href="https://twitter.com/mjsolidarios" class="twitter"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.instagram.com/sexynojutsuuser/" class="instagram"><i
+								class="fa fa-instagram"></i></a>
+					</div>
+				</small>
+			</section>
+			<section data-background="assets/bg0.jpg" class="left">
+				<img src="assets/nav.svg" alt="" class="icon-md" />
+				<p><small>
+						Use the navigation buttons or the arrow keys to proceed to the remaining slides.
+					</small></p>
+				<h2>F</h2>
+				<p>
+					<small>
+						You can also press
+						<span class="highlight">&gt;</span>
+						<span class="highlight">&gt;</span>F
+						<span class="highlight">&lt;</span>
+						<span class="highlight">&lt;</span> on your keyboard to show your presentation in fullscreen
+						mode.
+					</small>
+				</p>
+				<img src="assets/explore.svg" class="icon-md" alt="" />
+				<p>
+					<small>
+						This presentation is best explored with up-to-date web browsers.
+					</small>
+				</p>
+			</section>
+			<section data-background="assets/bg0.jpg">
+				<h3>Why Dart?</h3>
+				<ul>
+					<li class="fragment">The Dart syntax looks pretty familiar with sane conventions. </li>
+					<li class="fragment">Includes developer friendly toolkit (e.g. dart2js, dartfmt, dartdoc...etc)</li>
+					<li class="fragment">Performance - Dart allows the development of highly-performant mobile
+						applications through the Flutter development kit. </li>
+					<li class="fragment">JavaScript & Java developer friendly <i class="fa fa-heart"></i></li>
+				</ul>
+			</section>
+
+			<section class="left" data-background="assets/bg0.jpg">
+				<h3>Installing Dart</h3>
+				<a href="https://dart.dev/get-dart">https://dart.dev/get-dart</a>
+				<small class="fragment">* Flutter already includes dart support but for the sake of learning dart, we
+					will install its SDK.</small>
+			</section>
+
+			<section class="left" data-background="assets/bg0.jpg">
+				<p>Hello Dart</p>
+
+				<pre><code>
+void main() {
+	print('Hello, World!');
+}					
+				</code></pre>
+			</section>
+			<section class="left" data-background="assets/bg0.jpg">
+				<p>Variables</p>
+
+				<pre><code>
+var name = 'Voyager I';
+var year = 1977;
+var antennaDiameter = 3.7;
+var flybyObjects = ['Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+var image = {
+	'tags': ['saturn'],
+	'url': '//path/to/saturn.jpg'
+};	
+dynamic name = 'Bob';
+String name = 'Bob';
+final name = 'Bob';
+const bar = 1000000; // Unit of pressure (dynes/cm2)
+const double atm = 1.01325 * bar; // Standard atmosphere	
+
+var s1 = '''
+You can create
+multi-line strings like this one.
+''';			
+				</code></pre>
+			</section>
+			<section class="left" data-background="assets/bg0.jpg">
+				<p>Control flow statements</p>
+
+				<pre><code>
+if (year >= 2001) {
+	print('21st century');
+} else if (year >= 1901) {
+	print('20th century');
+}
+
+for (var object in flybyObjects) {
+	print(object);
+}
+
+for (int month = 1; month <= 12; month++) {
+	print(month);
+}
+
+while (year < 2016) {
+	year += 1;
+}		
+				</code></pre>
+			</section>
+			<section class="left" data-background="assets/bg0.jpg">
+				<p>Control flow statements</p>
+
+				<pre><code>
+int fibonacci(int n) {
+if (n == 0 || n == 1) return n;
+	return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+var result = fibonacci(20);	
+
+// Another method
+flybyObjects.where((name) => name.contains('turn')).forEach(print);
+				</code></pre>
+			</section>
+
+			<section class="left" data-background="assets/bg0.jpg">
+				<p>Input</p>
+
+				<pre><code>
+import 'dart:io';
+
+void main() {
+	stdout.writeln('Type something');
+	String input = stdin.readLineSync();
+	stdout.writeln('You typed: $input');
+}
+						
+				</code></pre>
+			</section>
+
+			<section class="left" data-background="assets/bg0.jpg">
+				<p>Imports</p>
+
+				<pre><code>
+// Importing core libraries
+import 'dart:math';
+
+// Importing libraries from external packages
+import 'package:test/test.dart';
+
+// Importing files
+import 'path/to/my_other_file.dart';
+				</code></pre>
+			</section>
+			<section class="left" data-background="assets/bg0.jpg">
+				<p>Classes</p>
+
+				<pre><code>
+class Spacecraft {
+	String name;
+	DateTime launchDate;
+	
+	// Constructor, with syntactic sugar for assignment to members.
+	Spacecraft(this.name, this.launchDate) {
+		// Initialization code goes here.
+	}
+	
+	// Named constructor that forwards to the default one.
+	Spacecraft.unlaunched(String name) : this(name, null);
+	
+	int get launchYear =>
+		launchDate?.year; // read-only non-final property
+	
+	// Method.
+	void describe() {
+		print('Spacecraft: $name');
+		if (launchDate != null) {
+		int years =
+			DateTime.now().difference(launchDate).inDays ~/
+				365;
+		print('Launched: $launchYear ($years years ago)');
+		} else {
+		print('Unlaunched');
+		}
+	}
+	}
+				</code></pre>
+			</section>
+			<section class="left" data-background="assets/bg0.jpg">
+				<p>Class Usage</p>
+
+				<pre><code>
+var voyager = Spacecraft('Voyager I', DateTime(1977, 9, 5));
+voyager.describe();
+
+var voyager3 = Spacecraft.unlaunched('Voyager III');
+voyager3.describe();
+				</code></pre>
+			</section>
+			<section class="left" data-background="assets/bg0.jpg">
+				<h3>Hello Dart!</h3>
+				<small class="fragment">Ope the link and follow the instructions.</small>
+				<br />
+				<a class="fragment" href="http://bit.ly/32GBQzT">http://bit.ly/32GBQzT</a>
+			</section>
+			<section data-background="assets/bg0.jpg">
+				<h3>Thank you!</h3>
+				<small>Questions, Comments, Suggestions?</small>
+			</section>
+		</div>
+	</div>
+
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true
+				}
+			]
+		});
+	</script>
+</body>
+
+</html>
